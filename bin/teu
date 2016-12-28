@@ -1,0 +1,27 @@
+#!/usr/bin/env node --harmony
+'use strict'
+const program = require('commander')
+const pkg = require('../package')
+// 显示 tue 的版本
+program.version(pkg.version)
+
+// 使用方法(命令)
+program.usage('<command> [options]')
+
+// 创建模板
+program.command('init').description('create project template')
+.alias('i').action(() => {
+  require('../lib/init')()
+})
+// 更新 cli
+program.option('-u, --update', 'update CLI to last', () => {
+  require('../lib/update')(pkg)
+})
+// 监听 help 命令
+program.on('--help', () => {
+  require('../lib/help')()
+})
+program.parse(process.argv)
+if (!program.args.length) {
+  program.help()
+}
