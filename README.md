@@ -69,7 +69,7 @@ Current available templates include:
 
 ## Changelog
 
-See the [release page](https://github.com/yeoman/yo/releases).
+See the [release page](https://github.com/zmGitHub/teu-cli/releases).
 ## License
 
 [MIT](http://opensource.org/licenses/MIT)
